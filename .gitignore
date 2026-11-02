@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.claude/
+.vscode/
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
+
+# documentação interna do projeto (briefing, persona, pesquisa, guias): fica só no computador
+docs/

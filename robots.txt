@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# obrigado.html e politica-de-privacidade.html usam <meta name="robots" content="noindex">.
+# Não bloqueie essas páginas aqui: o Google precisa acessá-las para ler o noindex.
+
+Sitemap: https://econowatt.vercel.app/sitemap.xml

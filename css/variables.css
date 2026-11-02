@@ -1,0 +1,67 @@
+/* =====================================================================
+   Identidade visual EconoWatt · direção "Placa na telha" (02/11/2026)
+   Tokens de cor, fonte, espaço e forma. Documentação em
+   docs/identidade-visual.md. Mudou aqui, muda na página inteira.
+   ===================================================================== */
+
+/* Fontes hospedadas no próprio site (licença OFL) */
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../assets/fonts/bebas-neue-400.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/inter-variavel.woff2") format("woff2");
+  font-weight: 400 800; font-style: normal; font-display: swap;
+}
+/* Fontes de reserva com medidas próximas, para a página não "pular" quando as fontes carregam */
+@font-face {
+  font-family: "Bebas reserva";
+  src: local("Arial Narrow"), local("Roboto Condensed"), local("Arial");
+  size-adjust: 78%; ascent-override: 115%; descent-override: 38%;
+}
+@font-face {
+  font-family: "Inter reserva";
+  src: local("Arial"), local("Helvetica");
+  size-adjust: 107%; ascent-override: 90%; descent-override: 22%; line-gap-override: 0%;
+}
+
+:root {
+  /* ---------- Cores (paleta "Dia claro") ---------- */
+  --cor-fundo: #F7F6F2;        /* fundo das seções claras */
+  --cor-branco: #FFFFFF;       /* cartões e cabeçalho */
+  --cor-marinho: #0B1B33;      /* texto principal, seções escuras, véu das fotos */
+  --cor-marinho-2: #13294B;    /* bordas e cartões sobre o marinho */
+  --cor-cinza: #4A5568;        /* texto secundário sobre claro (7,0:1) */
+  --cor-nevoa: #C9D2E0;        /* texto secundário sobre marinho (11:1) */
+  --cor-linha: #E3E1DA;        /* divisórias sobre claro */
+  --cor-amarelo: #FBBD06;      /* amarelo da logo: botão principal, palavra em destaque, fios */
+  --cor-amarelo-escuro: #E0A800; /* hover do botão */
+  --cor-coral: #FF5A3C;        /* só detalhes finos: ícones de check, marcadores. Nunca texto */
+  --cor-erro: #B42318;         /* mensagens de erro sobre claro (6,1:1) */
+  --cor-erro-escuro: #FFB4A8;  /* mensagens de erro sobre marinho (9,9:1) */
+
+  /* ---------- Tipografia ---------- */
+  --fonte-titulo: "Bebas Neue", "Bebas reserva", "Arial Narrow", sans-serif;
+  --fonte-texto: "Inter", "Inter reserva", system-ui, sans-serif;
+  --fs-h1: clamp(3.75rem, 2.2rem + 7.6vw, 7.75rem);   /* 60 → 124px */
+  --fs-h2: clamp(2.5rem, 1.9rem + 3vw, 4.25rem);      /* 40 → 68px */
+  --fs-h3: 1.1875rem;
+  --fs-numero: clamp(2.75rem, 2.3rem + 2.2vw, 3.75rem);
+  --fs-corpo: 1.0625rem;                                /* 17px */
+  --fs-chapeu: .75rem;
+
+  /* ---------- Espaço e forma ---------- */
+  --gutter: 1.25rem;
+  --largura: 72rem;            /* 1152px de conteúdo */
+  --secao: clamp(4rem, 3rem + 5vw, 7.5rem);
+  --raio: 10px;                /* botões e campos */
+  --raio-cartao: 14px;
+  --sombra: 0 24px 50px rgba(11, 27, 51, .14);
+  --altura-topo: 4.5rem;
+}
+
+@media (min-width: 48em) {
+  :root { --gutter: 2rem; }
+}
