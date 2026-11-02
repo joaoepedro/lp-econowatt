@@ -14,7 +14,7 @@ Landing page para a **EconoWatt Energia Solar** (Franca/SP): projeto e instalaç
 
 ## Tecnologias
 
-HTML, CSS e JavaScript puros, sem frameworks e sem etapa de build. As fontes (Bebas Neue e Inter, licença OFL) ficam hospedadas no próprio site. Fotos de banco de imagens (Unsplash) em WebP, marcadas como "Imagem ilustrativa".
+HTML, CSS e JavaScript puros, sem frameworks e sem etapa de build. As fontes (Bebas Neue e Inter, licença OFL) ficam hospedadas no próprio site. Fotos de banco de imagens (Unsplash, uso comercial livre e sem atribuição obrigatória) em WebP.
 
 ## Estrutura
 
