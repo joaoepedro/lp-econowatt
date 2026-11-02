@@ -41,7 +41,7 @@ O código fica em `integracoes/google-apps-script.js`. Depois de publicar o Apps
 
 ## Publicação
 
-Vercel, importando o repositório do GitHub. Depois do deploy, troque `https://econowatt.vercel.app/` pelo endereço final em: `index.html` (canonical, og:url, og:image, JSON-LD), `robots.txt` e `sitemap.xml`.
+No ar em **https://econowattt.vercel.app/** (Vercel, publicado a partir deste repositório a cada envio). Se o endereço mudar (domínio próprio, por exemplo), troque-o em: `index.html` (canonical, og:url, og:image, JSON-LD), `robots.txt` e `sitemap.xml`.
 
 ## Qualidade (metas)
 
