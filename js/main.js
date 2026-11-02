@@ -130,7 +130,6 @@
     faixa.querySelector("[data-fechar-faixa]").addEventListener("click", function () {
       faixa.hidden = true;
       try { localStorage.setItem("ew_faixa_fechada", "1"); } catch (e) { /* sem storage */ }
-      ajustarTopo();
       document.getElementById("conteudo").focus({ preventScroll: true });
     });
   }
@@ -139,11 +138,22 @@
      O CSS usa 100svh menos a altura da faixa + menu (medida aqui, porque a faixa
      pode quebrar em duas linhas no celular ou ser fechada). */
   const cabecalho = document.querySelector(".topo");
-  function ajustarTopo() {
-    const alturaFaixa = faixa && !faixa.hidden && getComputedStyle(faixa).display !== "none" ? faixa.offsetHeight : 0;
-    raiz.style.setProperty("--topo-total", (alturaFaixa + cabecalho.offsetHeight) + "px");
+  const alturas = new Map();
+  function ajustarTopo(medidas) {
+    medidas.forEach(function (m) {
+      alturas.set(m.target, m.borderBoxSize ? m.borderBoxSize[0].blockSize : m.contentRect.height);
+    });
+    let total = 0;
+    alturas.forEach(function (h) { total += h; });
+    raiz.style.setProperty("--topo-total", Math.round(total) + "px");
   }
-  addEventListener("resize", ajustarTopo, { passive: true });
+  // ResizeObserver mede depois que o navegador já calculou o layout (sem "reflow forçado")
+  // e avisa sozinho quando a faixa quebra de linha, é fechada ou a tela muda de tamanho.
+  if ("ResizeObserver" in window) {
+    const observador = new ResizeObserver(ajustarTopo);
+    observador.observe(cabecalho);
+    if (faixa) observador.observe(faixa);
+  }
 
   /* ---------- Mapa do rodapé: carrega o Google Maps só ao clicar ---------- */
   const botaoMapa = document.querySelector("[data-ver-mapa]");
@@ -177,6 +187,5 @@
   /* ---------- Início ---------- */
   Utils.capturarOrigem();
   preencherConfig();
-  ajustarTopo();
   definirPerfil(perfilInicial(), "inicio");
 })();
