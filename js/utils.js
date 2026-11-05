@@ -34,7 +34,7 @@ const Utils = (function () {
     }, CONFIG);
   }
 
-  /** Máscara simples de telefone: 16991817146 → (16) 99181-7146 */
+  /** Máscara simples de telefone: 16999999999 → (16) 99999-9999 */
   function mascaraTelefone(valor) {
     const d = valor.replace(/\D/g, "").slice(0, 11);
     if (d.length <= 2) return d.length ? "(" + d : "";

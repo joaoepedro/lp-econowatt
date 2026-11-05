@@ -26,8 +26,10 @@ const CONFIG = deepFreeze({
     desde: 2023,
     instalacoes: 210,                    // aparece como "+210"
     potenciaInstalada: "1,6 MWp",
-    whatsapp: "5516991817146",           // só números: 55 + DDD + número
-    whatsappExibicao: "(16) 99181-7146",
+    // Vazio = modo demonstração: os botões do WhatsApp abrem um aviso de projeto conceitual.
+    // Para ativar: só números, 55 + DDD + número (ex.: "5516999999999").
+    whatsapp: "",
+    whatsappExibicao: "(16) 90000-0000",   // fictício de propósito; trocar pelo real junto com o de cima
     horario: "seg. a sex., 8h às 18h · sáb., 9h às 15h",   // conforme o Google (02/11/2026)
     endereco: "R. Maria Martins de Araújo, 730 - Jardim Lima, Franca - SP, 14403-265",
     // Mapa do rodapé (carrega só ao clicar em "Ver no mapa")
