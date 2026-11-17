@@ -22,11 +22,13 @@ const CONFIG = deepFreeze({
   /* ---------- Empresa ---------- */
   empresa: {
     nome: "EconoWatt Energia Solar",
+    razaoSocial: "Econowatt Energia Solar e Climatização Ltda",   // Receita Federal (dados abertos do CNPJ)
+    cnpj: "48.933.653/0001-50",
     cidade: "Franca/SP",
     desde: 2023,
     instalacoes: 210,                    // aparece como "+210"
     potenciaInstalada: "1,6 MWp",
-    // Só números: 55 + DDD + número. Vazio = modo demonstração (os botões abrem um aviso de projeto conceitual).
+    // Só números: 55 + DDD + número. Obrigatório: sem ele os botões do WhatsApp não funcionam.
     whatsapp: "5516991817146",
     whatsappExibicao: "(16) 99181-7146",
     instagram: "https://www.instagram.com/econowatt_/",
@@ -36,7 +38,6 @@ const CONFIG = deepFreeze({
     mapaBusca: "Econowatt, R. Maria Martins de Araújo, 730 - Jardim Lima, Franca - SP",
     avaliacaoGoogle: {                   // dados reais do Google Maps em 02/11/2026; atualizar de tempos em tempos
       nota: "5,0",
-      total: 9,
       link: "https://www.google.com/maps/place/Econowatt/@-20.5578418,-47.4026338,17z"
     },
     cidadesAtendidas: [

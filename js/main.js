@@ -5,7 +5,7 @@
    • Título com o verbo que cai (ou sobe)
    • Faixa "Projeto conceitual" com botão Entendi
    • Topo (foto) ocupando a primeira tela inteira
-   • Menu do celular, mapa do rodapé, cliques no WhatsApp
+   • Menu do celular, mapa do rodapé, cliques no WhatsApp e no telefone
    • Botão flutuante do WhatsApp some enquanto o formulário está na tela
    ===================================================================== */
 
@@ -35,6 +35,9 @@
     document.querySelectorAll("[data-config-href]").forEach(function (el) {
       const v = Utils.lerConfig(el.dataset.configHref);
       if (v) el.href = v;
+    });
+    document.querySelectorAll("[data-tel]").forEach(function (a) {
+      a.href = "tel:+" + CONFIG.empresa.whatsapp;
     });
     document.querySelectorAll("[data-ano-atual]").forEach(function (el) {
       el.textContent = new Date().getFullYear();
@@ -179,9 +182,10 @@
     }).observe(formLead);
   }
 
-  /* ---------- Cliques no WhatsApp contam como contato ---------- */
+  /* ---------- Cliques no WhatsApp e no telefone contam como contato ---------- */
   document.addEventListener("click", function (e) {
     if (e.target.closest("[data-whatsapp]")) Tracking.evento("Contact", { origem: "botao-whatsapp", perfil: raiz.dataset.perfil });
+    else if (e.target.closest("[data-tel]")) Tracking.evento("Contact", { origem: "telefone", perfil: raiz.dataset.perfil });
   });
 
   /* ---------- Início ---------- */

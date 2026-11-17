@@ -19,12 +19,12 @@ HTML, CSS e JavaScript puros, sem frameworks e sem etapa de build. As fontes (Be
 ## Estrutura
 
 ```
-index.html · obrigado.html · politica-de-privacidade.html
-css/      reset.css · variables.css (tokens) · style.css
+index.html · obrigado.html · politica-de-privacidade.html · 404.html
+css/      style.css (começa pelos tokens de cor, fonte e espaço; depois o reset e o visual)
 js/       config.js (painel de controle) · utils.js · tracking.js · simulador.js · form.js · main.js · obrigado.js
 assets/   fonts/ · img/ (fotos WebP, favicon, ícone e imagem de compartilhamento; a logo fica embutida no HTML)
 integracoes/google-apps-script.js
-robots.txt · sitemap.xml · vercel.json
+robots.txt · sitemap.xml · vercel.json · .vercelignore
 ```
 
 ## Como editar
@@ -42,6 +42,10 @@ O código fica em `integracoes/google-apps-script.js`. Depois de publicar o Apps
 ## Publicação
 
 No ar em **https://econowattt.vercel.app/** (Vercel, publicado a partir deste repositório a cada envio). Se o endereço mudar (domínio próprio, por exemplo), troque-o em: `index.html` (canonical, og:url, og:image, JSON-LD), `robots.txt` e `sitemap.xml`.
+
+O `.vercelignore` impede que `docs/`, `integracoes/`, arquivos `.md` e `.bat` sejam publicados. O `404.html` é usado automaticamente pela Vercel e pela Cloudflare para endereços que não existem.
+
+**Ao migrar para a Cloudflare:** a Cloudflare não lê o `vercel.json` nem o `.vercelignore`. Os cabeçalhos de segurança e de cache vão para um arquivo `_headers`, e as pastas que não devem ir para o ar precisam ficar fora da pasta publicada (ou ser removidas num comando de build).
 
 ## Qualidade (metas)
 

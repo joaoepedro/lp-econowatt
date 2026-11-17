@@ -1,0 +1,7 @@
+# Arquivos que ficam no repositório mas NÃO vão para o site no ar
+# (Vercel lê este arquivo; ao migrar para a Cloudflare, ver README)
+integracoes/
+docs/
+README.md
+*.bat
+*.md
