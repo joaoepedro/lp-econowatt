@@ -479,7 +479,7 @@ html[data-perfil="industria"] [data-so-perfil="industria"] { display: block; }
 .consentimento input { width: 1.25rem; height: 1.25rem; margin: .1rem 0 0; accent-color: var(--cor-amarelo); }
 
 /* ---------- Rodapé ---------- */
-.rodape { background: #071225; color: var(--cor-nevoa); padding-block: 3.5rem 6.5rem; font-size: .875rem; }
+.rodape { background: #071225; color: var(--cor-nevoa); padding-top: 3.5rem; font-size: .875rem; }
 .rodape__inner { display: grid; gap: 2.25rem; }
 /* Logo do rodapé: tamanho no celular e no desktop definido nas regras abaixo */
 .rodape__logo { display: block; width: 100%; height: auto; aspect-ratio: 1764 / 1332; max-width: 22rem; color: var(--cor-amarelo); }
@@ -491,6 +491,10 @@ html[data-perfil="industria"] [data-so-perfil="industria"] { display: block; }
 .rodape__links .link-botao { color: #fff; }
 .rodape__credito { margin-top: 1.25rem !important; font-size: .8125rem; }
 .rodape__cnpj { font-size: .8125rem; }
+/* Linha final: quem desenvolveu o site */
+.rodape__assinatura { margin-top: 3rem; padding: 1.1rem var(--gutter) 5.5rem; border-top: 1px solid rgba(255, 255, 255, .1); text-align: center; font-size: .8125rem; }
+.rodape__assinatura a { font-weight: 600; }
+@media (min-width: 62em) { .rodape__assinatura { padding-bottom: 1.25rem; } }
 .avaliacao {
   display: inline-grid; gap: .1rem; margin-top: 1.5rem; padding: .7rem 1rem;
   border: 1px solid rgba(255, 255, 255, .18); border-radius: var(--raio); text-decoration: none;
@@ -525,7 +529,6 @@ html[data-perfil="industria"] [data-so-perfil="industria"] { display: block; }
   .redes, .rodape__links { justify-content: center; }
 }
 @media (min-width: 62em) {
-  .rodape { padding-bottom: 3.5rem; }
   .rodape__inner { grid-template-columns: 15rem 1fr 1.1fr; gap: 3.5rem; align-items: start; }
   .rodape__logo { max-width: 11.5rem; }
 }

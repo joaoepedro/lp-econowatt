@@ -44,7 +44,8 @@ const CONFIG = deepFreeze({
       "Franca", "Batatais", "Patrocínio Paulista", "Cristais Paulista", "Restinga",
       "Pedregulho", "Itirapuã", "Ribeirão Corrente", "Jeriquara", "São José da Bela Vista"
     ],
-    desenvolvedor: "João Pedro Morais"
+    desenvolvedor: "jotap.",                       // linha "Desenvolvido por" no fim do rodapé
+    desenvolvedorSite: "https://odevjp.vercel.app/"
   },
 
   /* ---------- Integrações ----------
