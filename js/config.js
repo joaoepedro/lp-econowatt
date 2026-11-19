@@ -28,10 +28,10 @@ const CONFIG = deepFreeze({
     desde: 2023,
     instalacoes: 210,                    // aparece como "+210"
     potenciaInstalada: "1,6 MWp",
-    // Só números: 55 + DDD + número. Obrigatório: sem ele os botões do WhatsApp não funcionam.
-    whatsapp: "5516991817146",
-    whatsappExibicao: "(16) 99181-7146",
-    instagram: "https://www.instagram.com/econowatt_/",
+    // Número FICTÍCIO (portfólio). Os botões abrem um card simulado (js/redes-simuladas.js), não o WhatsApp real.
+    whatsapp: "5516990000000",
+    whatsappExibicao: "(16) 99000-0000",
+    instagram: "https://www.instagram.com/econowatt.solar.demo/",
     horario: "seg. a sex., 8h às 18h · sáb., 9h às 15h",   // conforme o Google (02/11/2026)
     endereco: "R. Maria Martins de Araújo, 730 - Jardim Lima, Franca - SP, 14403-265",
     // Mapa do rodapé (carrega só ao clicar em "Ver no mapa")
