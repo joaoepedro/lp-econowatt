@@ -1,0 +1,364 @@
+/* =========================================================
+   Prévia do WhatsApp e do Instagram (só no protótipo).
+   Carregado automaticamente pelo js/aviso-demo.js quando
+   CONFIG.modoDemonstracao = true. Igual em todos os projetos.
+   ========================================================= */
+:where(.demo-whats, .demo-insta) button {
+    border: 0;
+    background: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+:where(.demo-whats, .demo-insta) p {
+    margin: 0;
+}
+:where(.demo-whats, .demo-insta) [hidden] {
+    display: none !important;
+}
+
+.demo-whats {
+    --dw-topo: #075e54;
+    --dw-fundo: #ece5dd;
+    --dw-balao: #dcf8c6;
+    width: min(100% - 2rem, 24rem);
+    max-height: min(100% - 2rem, 40rem);
+    padding: 0;
+    border: 0;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    background: var(--dw-fundo);
+    color: #111;
+    font:
+        400 1rem/1.4 system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.35);
+}
+.demo-whats[open] {
+    display: flex;
+    flex-direction: column;
+    animation: dw-entra 0.25s ease-out;
+}
+.demo-whats::backdrop {
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.demo-whats__topo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.75rem 1rem;
+    background: var(--dw-topo);
+    color: #fff;
+}
+.demo-whats__voltar {
+    font-size: 1.75rem;
+    line-height: 1;
+    padding: 0 0.25rem;
+    color: #fff;
+}
+.demo-whats__avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    flex: none;
+    object-fit: cover;
+    display: grid;
+    place-items: center;
+    background: #fff;
+    color: var(--dw-topo);
+    font-weight: 700;
+}
+.demo-whats__quem {
+    display: grid;
+    line-height: 1.2;
+}
+.demo-whats__quem small {
+    opacity: 0.8;
+    font-size: 0.8rem;
+}
+
+.demo-whats__conversa {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 13rem;
+    padding: 1rem;
+}
+.demo-whats__balao {
+    align-self: flex-end;
+    max-width: 85%;
+    padding: 0.5rem 0.65rem 0.35rem;
+    border-radius: 0.6rem 0.6rem 0;
+    background: var(--dw-balao);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+    animation: dw-entra 0.3s ease-out;
+}
+.demo-whats__texto {
+    display: block;
+    white-space: pre-wrap;
+}
+.demo-whats__hora {
+    display: block;
+    text-align: right;
+    font-size: 0.7rem;
+    color: #4a5a62;
+    margin-top: 0.15rem;
+}
+
+.demo-whats__digitando {
+    align-self: flex-end;
+    display: flex;
+    gap: 0.3rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 0.6rem;
+    background: var(--dw-balao);
+}
+.demo-whats__digitando span {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: #7a9a7a;
+    animation: dw-pulo 1s infinite ease-in-out;
+}
+.demo-whats__digitando span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+.demo-whats__digitando span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.demo-whats__rodape {
+    flex: none;
+    display: grid;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem 1rem;
+    background: #fff;
+}
+.demo-whats__aviso {
+    font-size: 0.85rem;
+    color: #444;
+}
+.demo-whats__ok {
+    padding: 0.7rem 1rem;
+    border-radius: 2rem;
+    background: var(--dw-topo);
+    color: #fff;
+    font-weight: 600;
+}
+.demo-whats__ok:focus-visible,
+.demo-whats__voltar:focus-visible {
+    outline: 3px solid #25d366;
+    outline-offset: 2px;
+}
+
+/* ---------- Instagram (mesmo formato de card do WhatsApp) ---------- */
+.demo-insta {
+    width: min(100% - 2rem, 24rem);
+    max-height: min(100% - 2rem, 40rem);
+    padding: 0;
+    border: 0;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    background: #fff;
+    color: #111;
+    font:
+        400 1rem/1.4 system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.35);
+}
+.demo-insta[open] {
+    display: flex;
+    flex-direction: column;
+    animation: dw-entra 0.25s ease-out;
+}
+.demo-insta::backdrop {
+    background: rgba(0, 0, 0, 0.55);
+}
+.demo-insta__topo {
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #dbdbdb;
+    font-size: 1.05rem;
+}
+.demo-insta__voltar {
+    font-size: 1.75rem;
+    line-height: 1;
+    padding: 0 0.25rem;
+    margin-right: 0.25rem;
+    color: #111;
+}
+.demo-insta__selo {
+    display: inline-grid;
+    place-items: center;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #0095f6;
+    color: #fff;
+    font-size: 0.6rem;
+}
+.demo-insta__corpo {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+.demo-insta__perfil {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 1rem 1rem 0.6rem;
+}
+.demo-insta__anel {
+    flex: none;
+    padding: 3px;
+    border-radius: 50%;
+    background: conic-gradient(from 200deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5, #feda75);
+}
+.demo-insta__avatar {
+    width: 4.5rem;
+    height: 4.5rem;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    object-fit: cover;
+    background: #fff;
+    color: #075e54;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+.demo-insta .demo-insta__numeros {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+.demo-insta__numeros li {
+    display: grid;
+    font-size: 0.78rem;
+    color: #262626;
+}
+.demo-insta__numeros strong {
+    font-size: 1.05rem;
+}
+.demo-insta__bio {
+    display: grid;
+    gap: 0.1rem;
+    padding: 0 1rem 0.8rem;
+    font-size: 0.85rem;
+    color: #262626;
+}
+.demo-insta__categoria {
+    color: #737373;
+}
+.demo-insta__link {
+    color: #00376b;
+    font-weight: 600;
+}
+.demo-insta__acoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+    padding: 0 1rem 0.9rem;
+}
+.demo-insta__botao {
+    padding: 0.45rem;
+    border-radius: 0.5rem;
+    background: #efefef;
+    color: #000;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+.demo-insta__botao--azul {
+    background: #0095f6;
+    color: #fff;
+}
+.demo-insta .demo-insta__destaques {
+    display: flex;
+    gap: 0.9rem;
+    margin: 0;
+    padding: 0 1rem 1rem;
+    list-style: none;
+    overflow-x: auto;
+}
+.demo-insta__destaques li {
+    display: grid;
+    justify-items: center;
+    gap: 0.3rem;
+    font-size: 0.72rem;
+    color: #262626;
+}
+.demo-insta__destaque {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 1px #dbdbdb;
+    overflow: hidden;
+    background: #efefef;
+}
+.demo-insta__destaque img,
+.demo-insta__grade img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.demo-insta .demo-insta__grade {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid #dbdbdb;
+}
+.demo-insta__grade li {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #efefef;
+}
+.demo-insta__rodape {
+    border-top: 1px solid #dbdbdb;
+}
+.demo-insta__ok {
+    background: linear-gradient(90deg, #f58529, #dd2a7b 50%, #8134af);
+}
+.demo-insta__voltar:focus-visible,
+.demo-insta__botao:focus-visible,
+.demo-insta__ok:focus-visible {
+    outline: 3px solid #0095f6;
+    outline-offset: 2px;
+}
+
+@keyframes dw-entra {
+    from {
+        opacity: 0;
+        transform: translateY(0.75rem);
+    }
+}
+@keyframes dw-pulo {
+    0%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-0.3rem);
+    }
+}

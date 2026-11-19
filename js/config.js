@@ -19,6 +19,11 @@ const CONFIG = deepFreeze({
      false = versão oficial (só depois de trocar números e depoimentos por dados reais) */
   conceitual: true,
 
+  /* ---------- Modo demonstração ----------
+     true  = os botões de WhatsApp e Instagram abrem uma prévia simulada (js/aviso-demo.js)
+     false = abrem as redes de verdade (trocar também os dados fictícios abaixo) */
+  modoDemonstracao: true,
+
   /* ---------- Empresa ---------- */
   empresa: {
     nome: "EconoWatt Energia Solar",
@@ -28,10 +33,12 @@ const CONFIG = deepFreeze({
     desde: 2023,
     instalacoes: 210,                    // aparece como "+210"
     potenciaInstalada: "1,6 MWp",
-    // Número FICTÍCIO (portfólio). Os botões abrem um card simulado (js/redes-simuladas.js), não o WhatsApp real.
+    // Número FICTÍCIO (portfólio). No modo demonstração os botões abrem uma prévia (js/aviso-demo.js).
     whatsapp: "5516990000000",
     whatsappExibicao: "(16) 99000-0000",
-    instagram: "https://www.instagram.com/econowatt.solar.demo/",
+    instagram: "https://www.instagram.com/econowatt.solar.demo/",   // fictício
+    instagramUsuario: "econowatt.solar.demo",
+    logoPrevia: "assets/img/favicon.svg",   // foto de perfil nas prévias do WhatsApp e do Instagram
     horario: "seg. a sex., 8h às 18h · sáb., 9h às 15h",   // conforme o Google (02/11/2026)
     endereco: "R. Maria Martins de Araújo, 730 - Jardim Lima, Franca - SP, 14403-265",
     // Mapa do rodapé (carrega só ao clicar em "Ver no mapa")
